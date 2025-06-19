@@ -3,6 +3,9 @@
 
 A RESTful movie database API built with Node.js, Express, and MySQL, featuring secure authentication, rich movie data, and Swagger documentation.
 
+## 🌐 Live API
+Base URL: [https://movie-api-4r5e.onrender.com](https://movie-api-4r5e.onrender.com)
+
 ---
 
 ## 🚀 Features
