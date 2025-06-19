@@ -1,6 +1,4 @@
 require('dotenv').config();
-const fs = require('fs');
-const https = require('https');
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./docs/openapi.json');
@@ -20,13 +18,9 @@ app.use('/people', require('./routes/people'));
 app.use('/user', require('./routes/user'));
 
 // Load SSL cert and key
-const options = {
-    key: fs.readFileSync('./server.key'),
-    cert: fs.readFileSync('./server.cert')
-};
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0',() => {
+    console.log('Server listening on port ' + PORT);
+})
 
-// Start HTTPS server
-https.createServer(options, app).listen(3000, () => {
-    console.log(" HTTPS server running at https://localhost:3000");
-});
 
